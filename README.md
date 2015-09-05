@@ -1,2 +1,4 @@
 # pythoncourse
 Valeriia Kuzyk
+
+goddamnit
