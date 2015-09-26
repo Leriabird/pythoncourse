@@ -4,7 +4,7 @@ p = int(input())
 if item == 'ложка':
     if p % 10 == 0:
         print(p, 'ложек')
-    elif p == 11 or p == 12 or p ==13 or p == 14 or p % 100 == 11 or p % 100 == 12 or p % 100 == 13 or p % 100 == 14:
+    elif p == 11 or p == 12 or p ==13 or p == 14 or 10 < p % 100 < 15:
         print(p, 'ложек')
     elif p % 10 == 1:
         print (p, 'ложка')
