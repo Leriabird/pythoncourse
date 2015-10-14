@@ -1,7 +1,7 @@
 #! /usr/bin/env python3
 
 def euclid(a, b):
-    return euclid(b, a%b) if b else a
+    return euclid(b, a % b) if b else a
 
 
 def rpfilter(a, *args):
@@ -11,6 +11,6 @@ def rpfilter(a, *args):
 firstarg, *otherargs = map(int, input().split())
 if rpfilter(firstarg, *otherargs) != []:
     for char in (rpfilter(firstarg, *otherargs)):
-        print(char, end = ' ')
+        print(char, end=' ')
 else:
     (print(None))
