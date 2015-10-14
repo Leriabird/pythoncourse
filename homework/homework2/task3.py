@@ -1,17 +1,18 @@
 #! /usr/bin/env python3
 
-def prime(x):
-    counter = True
-    for i in range(2, 5000):
-        if x == 2:
-            break
-        elif (x % i == 0) and x != i:
-            counter = False
-        i += 1
-    return counter
+#from fractions import gcd
 
-n = int(input())
-numlst = [int(input()) for char in range(n)]
-boolst = [prime(char) for char in numlst]
-for i in boolst:
-    print(i)
+def euclid(a, b):
+    while b:
+        a, b = b, a % b
+    return a
+# а вот тут я не поняла, почему не работает модуль из стандартной библиотеки 
+# (хотела быть хитрецом):
+# def euclid(n, m):
+#     x = gcd(20, 8)
+#     return x
+
+lst = input().split()
+n = int(lst[0])
+m = int(lst[1])
+print(euclid(n, m))

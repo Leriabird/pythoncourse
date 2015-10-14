@@ -1,23 +1,18 @@
 #! /usr/bin/env python3
 
-def plural(n, lst):
-    deflst = [2, 3, 4]
-    exclst = [12, 13, 14]
-    if (n % 10 == 1) and (n % 100 != 11):
-        return lst[0]
-    if (n % 10 in deflst) and (n % 100 not in exclst):
-        return lst[1]
+def combinations(n, k):
+    if 0 <= k <= n:
+        ncomb = 1
+        kcomb = 1
+        for i in range(1, min(k, n - k) + 1):
+            ncomb *= n
+            kcomb *= t
+            n -= 1
+        return ncomb // kcomb
     else:
-        return lst[2]
+        return 0
 
-word = input()
-amount = int(input())
-if word == 'утюг':
-    data = ['утюг', 'утюга', 'утюгов']
-elif word == 'чайник':
-    data = ['чайник', 'чайника', 'чайников']
-elif word == 'ложка':
-    data = ['ложка', 'ложки', 'ложек']
-elif word == 'гармошка':
-    data = ['гармошка', 'гармошки', 'гармошек']
-print(amount, plural(amount, data))
+lst = input().split()
+n = int(lst[0])
+k = int(lst[1])
+print(combinations(n, k))

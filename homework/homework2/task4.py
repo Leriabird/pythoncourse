@@ -1,18 +1,16 @@
 #! /usr/bin/env python3
 
-#from fractions import gcd
-
 def euclid(a, b):
-    while b:
-        a, b = b, a % b
-    return a
-# а вот тут я не поняла, почему не работает модуль из стандартной библиотеки 
-# (хотела быть хитрецом):
-# def euclid(n, m):
-#     x = gcd(20, 8)
-#     return x
+    return euclid(b, a%b) if b else a
 
-lst = input().split()
-n = int(lst[0])
-m = int(lst[1])
-print(euclid(n, m))
+
+def rpfilter(a, *args):
+    rp = list(filter(lambda arg: euclid(a, arg) == 1, args))
+    return rp
+
+firstarg, *otherargs = map(int, input().split())
+if rpfilter(firstarg, *otherargs) != []:
+    for char in (rpfilter(firstarg, *otherargs)):
+        print(char, end = ' ')
+else:
+    (print(None))

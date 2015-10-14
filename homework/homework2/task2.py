@@ -1,18 +1,17 @@
 #! /usr/bin/env python3
 
-def combinations(n, k):
-    if 0 <= k <= n:
-        ncomb = 1
-        kcomb = 1
-        for i in range(1, min(k, n - k) + 1):
-            ncomb *= n
-            kcomb *= t
-            n -= 1
-        return ncomb // kcomb
-    else:
-        return 0
+def prime(x):
+    counter = True
+    for i in range(2, 5000):
+        if x == 2:
+            break
+        elif (x % i == 0) and x != i:
+            counter = False
+        i += 1
+    return counter
 
-lst = input().split()
-n = int(lst[0])
-k = int(lst[1])
-print(combinations(n, k))
+n = int(input())
+numlst = [int(input()) for char in range(n)]
+boolst = [prime(char) for char in numlst]
+for i in boolst:
+    print(i)
