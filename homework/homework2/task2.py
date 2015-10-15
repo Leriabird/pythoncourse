@@ -2,7 +2,7 @@
 
 def prime(x):
     counter = True
-    for i in range(2, 5000):
+    for i in range(2, x):
         if x == 2:
             break
         elif (x % i == 0) and x != i:
