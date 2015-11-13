@@ -142,4 +142,3 @@ print(super_productive_artist(songs_list))
 # song1 = Song("Queen", "Bohemian Rhapsody")
 # song2 = Song("Metallica", "Die, Die, Die my Darling")
 
-# print(song1 < song2)
