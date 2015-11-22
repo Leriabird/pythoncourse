@@ -8,9 +8,9 @@ with open ('yazkora.txt', 'r+') as ds:
            if elt[-2:] == 'yo':
                f.write(elt + ' ')
            if elt[-3:] == 'yo.':
-               f.write(elt[:-1], \'\\n\')
+               f.write(elt[:-1], '\n')
            if elt[-1:] == '.' and elt[-3:] != 'yo.':
-               f.write(\'\\n\')
+               f.write('\n')
 
 with open('yazkora.txt', 'r') as f:
    language = f.read()
@@ -18,11 +18,11 @@ with open('yazkora.txt', 'r') as f:
 language = language.split('.')
 answer = open('answer.txt', 'w')
 for sentence in language:
-   sentence = sentence.replace('\\n', ' ')
+   sentence = sentence.replace('\n', ' ')
    words = sentence.split(' ')
    for word in words:
        if word[-2:] == 'yo':
            tmp = word + ' '
            answer.write(tmp)
-   answer.write('\\n')
+   answer.write('\n')
 answer.close()
