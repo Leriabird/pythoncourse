@@ -1,22 +1,28 @@
 #! /usr/bin/env python3
 
-with open ('yazkora.txt', 'r+') as yazkora:
-    answer = open('answer.txt', 'w')
-    suffix = ('yo', 'yo.')
-    dot = '.'
-    for line in yazkora:
-        line_list = line.split().strip()
-        for word in line_list:
-        #x = [elt for elt in line_list if elt.endswith(suffix)]
-            if word.endswith(suffix):
-                answer.write(word + ' ')
-            elif word.endswith(dot):
-                answer.write('\n')
-    answer.close()
+with open ('yazkora.txt', 'r+') as ds:
+   f = open('answer.txt', 'w')
+   for line in ds:
+       temp = line.split()
+       for elt in temp:
+           if elt[-2:] == 'yo':
+               f.write(elt + ' ')
+           if elt[-3:] == 'yo.':
+               f.write(elt[:-1], \'\\n\')
+           if elt[-1:] == '.' and elt[-3:] != 'yo.':
+               f.write(\'\\n\')
 
-with open ('yazkora.txt', 'r') as yazkora:
-    with open("answer.txt", "w") as answer:
-    for line in yazkora:
-            print(" ".join([word.enswith(suffix) and word 
-                            or word.endswith(dot) and new_line for in line.strip().split()]),
-                  end="", file=answer)
+with open('yazkora.txt', 'r') as f:
+   language = f.read()
+ 
+language = language.split('.')
+answer = open('answer.txt', 'w')
+for sentence in language:
+   sentence = sentence.replace('\\n', ' ')
+   words = sentence.split(' ')
+   for word in words:
+       if word[-2:] == 'yo':
+           tmp = word + ' '
+           answer.write(tmp)
+   answer.write('\\n')
+answer.close()
