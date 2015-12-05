@@ -1,9 +1,21 @@
 __author__ = 'Leria'
 
-import xml.etree.ElementTree as ET
-import urllib2
+import re
+import urllib
 import requests
-import lxml
+from lxml import etree
+import _elementtree
+
+url = 'https://twitter.com/googlefacts'
+d = requests.get(url).text
+root = etree.fromstring(d)
+it = root.iter(<p class="TweetTextSize  js-tweet-text tweet-text" lang="en" data-aria-label-part="0">Sizzl, Oscar Mayer’s new dating app, pairs up singles based on their love of bacon.</p>)
+
+
+
+
+
+
 
 # url = "http://string-db.org/api/psi-mi/interactions?identifier=APP&required_score=800&limit=5"
 # s = urllib2.urlopen(url)
