@@ -28,4 +28,5 @@ def clicker(start, end, click_amount):
                     break
         return '\n'.join(final_links)
 
+
 print(clicker('https://en.wikipedia.org/wiki/Gone_Maggie_Gone', 'https://en.wikipedia.org/wiki/Theia_(planet)', 2))
